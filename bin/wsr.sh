@@ -2,7 +2,7 @@
 
 WS_ROOT_PATH=`dirname $(dirname $(readlink -f $0))`
 
-USER="wxg"
+USER="data"
 NGINX_BIN="${WS_ROOT_PATH}/bin/nginx"
 PHP_BIN="${WS_ROOT_PATH}/bin/php-fpm"
 PG_BIN="${WS_ROOT_PATH}/bin/pg_ctl"

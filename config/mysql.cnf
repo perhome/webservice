@@ -3,7 +3,7 @@
 
 [mysqld]
 character-set-server=utf8
-user=wxg
+user=data
 basedir=/usr/local/mysql/
 datadir=/home/webservice/data/mysql/
 socket=/tmp/.s.MYSQL.3306
