@@ -1,0 +1,40 @@
+server {
+    server_name dev.perhome.cn *.dev.perhome.cn;
+    
+    set $subdir '';
+    set $rewc '';
+    if ($http_host ~ "(.+)\.dev.perhome.cn") {     
+        set $subdir $1;  
+        set $rewrite $1;
+    }
+
+    root /home/webservice/sites/dev.perhome.cn/$subdir;
+    expires -1; 
+    add_header 'Access-Control-Allow-Origin' *;
+    
+    access_log none;
+    error_log /home/webservice/logs/dev-error.log;
+
+    if (!-d $request_filename) {
+      set $rewrite "${rewrite}_d";
+       
+    }
+    if (!-f $request_filename) {
+      set $rewrite "${rewrite}_f";
+       
+    }
+    if ($rewrite = "phpsqlitecms_d_f") {
+      rewrite ^/(.*)$ /index.php?qs=$1 last;
+    }
+
+    location  / {
+        index index.php index.html index.htm;
+        try_files $uri $uri/ /index.php$uri?$args;
+    }
+
+    location ~ ^(.+\.php)(.*)$ {
+        include sites/php.conf;
+    }
+    
+}
+

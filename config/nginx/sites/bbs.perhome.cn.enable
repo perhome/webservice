@@ -1,0 +1,9 @@
+server {
+    root /home/webservice/sites/bbs.perhome.cn;
+    server_name bbs.perhome.cn;
+
+    access_log none;
+    error_log /home/webservice/logs/bbs-error.log;
+    
+    include sites/common.conf;
+}

@@ -1,0 +1,10 @@
+server {
+    root /home/webservice/sites/heze.perhome.cn;
+    server_name heze.perhome.cn;
+
+    access_log none;
+    error_log /home/webservice/logs/heze-error.log;
+
+    set $HTTPS_FLAG off;
+    include sites/common.conf;
+}

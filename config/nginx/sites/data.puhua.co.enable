@@ -1,0 +1,22 @@
+server {
+    server_name data.puhua.co;
+    root /home/webservice/sites/data.puhua.co;
+    
+    location / {
+        access_log off;
+        error_log off;
+        expires 24h;
+        valid_referers none blocked *.perhome.cn perhome.cn *.puhua.co puhua.co;
+        if ($invalid_referer) {
+            return 403;
+        }
+    }
+
+    location ~* \.(eot|ttf|woff|svg|svgz|otf)$ {
+        add_header Access-Control-Allow-Origin *;
+    }
+    
+    location ~ /\. {
+        deny all;
+    }
+}

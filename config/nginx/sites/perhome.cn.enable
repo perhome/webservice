@@ -1,0 +1,23 @@
+server {
+    root /home/webservice/sites/perhome.cn;
+    server_name perhome.cn;
+
+    access_log none;
+    error_log /home/webservice/logs/perhome-error.log;
+    
+    location /tools/ {
+        autoindex  on;
+        index index.php index.html index.htm;
+        auth_basic            "Password?";
+        auth_basic_user_file  sites/user.conf;
+	location /tools/s {
+	    try_files $uri $uri/ /tools/s/index.php?$args;
+	}
+        location ~ ^(.+\.php)(.*)$ {
+            include sites/php.conf;
+        }
+    }
+    
+
+    include sites/common.conf;
+}

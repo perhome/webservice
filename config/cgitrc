@@ -1,0 +1,116 @@
+# Enable caching of up to 1000 output entriess
+cache-size=1000
+cache-static-ttl=0
+nocache=1
+virtual-root=/index.cgi/
+
+# Specify some default clone urls using macro expansion
+clone-url=git://perhome.cn/git/$CGIT_REPO_URL git@perhome.cn:$CGIT_REPO_URL
+
+# Specify the css url
+# css=/cgit.css
+
+# Show extra links for each repository on the index page
+enable-index-links=1
+
+# Enable ASCII art commit history graph on the log pages
+enable-commit-graph=1
+
+# Show number of affected files per commit on the log pages
+enable-log-filecount=1
+
+# Show number of added/removed lines per commit on the log pages
+enable-log-linecount=1
+
+# Add a cgit favicon
+favicon=/favicon.ico
+
+# Use a custom logo
+logo=/cgit.png
+
+# Enable statistics per week, month and quarter
+max-stats=quarter
+
+# Set the title and heading of the repository index page
+root-title=普华一方之源代码
+
+# Set a subheading for the repository index page
+root-desc=供参考、查看、跟踪与学习只用。
+
+# Include some more info about example.com on the index page
+root-readme=about.html
+
+# Allow download of tar.gz, tar.bz2 and zip-files
+snapshots=tar.gz tar.bz2 zip
+
+##
+## List of common mimetypes
+##
+
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
+
+##
+## List of repositories.
+## PS: Any repositories listed when section is unset will not be
+##     displayed under a section heading
+## PPS: This list could be kept in a different file (e.g. '/etc/cgitrepos')
+##      and included like this:
+##        include=/etc/cgitrepos
+##
+repo.url=perhome.cn
+repo.path=/home/server/core/sites/perhome.cn/git/perhome.cn/
+repo.desc=普华一方
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=puhua.co
+repo.path=/home/server/core/sites/perhome.cn/git/puhua.co/
+repo.desc=本地搜索
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=task.puhua.co
+repo.path=/home/server/core/sites/perhome.cn/git/task.puhua.co/
+repo.desc=普华任务
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=shop.puhua.co
+repo.path=/home/server/core/sites/perhome.cn/git/shop.puhua.co/
+repo.desc=商城
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=accounts
+repo.path=/home/server/core/sites/perhome.cn/git/accounts/
+repo.desc=用户管理
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=kohana
+repo.path=/home/server/core/sites/perhome.cn/git/kohana/
+repo.desc=开发框架
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+repo.url=bugzilla-cn
+repo.path=/home/server/core/sites/perhome.cn/git/bugzilla-cn/
+repo.desc=bugzilla简体中文语言包
+repo.owner=wxg4ph@gmail.com
+repo.readme=info/web/about.html
+
+
+# Disable adhoc downloads of this repo
+repo.snapshots=0
+
+# Disable line-counts for this repo
+repo.enable-log-linecount=0
+
+# Restrict the max statistics period for this repo
+repo.max-stats=month

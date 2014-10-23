@@ -1,0 +1,9 @@
+server {
+    server_name shop.puhua.co;
+    access_log none;
+    error_log /home/webservice/logs/shop-error.log;
+    root /home/webservice/sites/shop.puhua.co/;
+    set $HTTPS_FLAG off;
+    include sites/common.conf;
+}
+

@@ -1,0 +1,1 @@
+/home/webservice/applications/kohana/index.php

@@ -1,0 +1,9 @@
+server {
+    server_name kohana.perhome.cn;
+    access_log none;
+    error_log none;
+    root /home/webservice/sites/kohana.perhome.cn/;
+    set $HTTPS_FLAG off;
+    include sites/common.conf;
+}
+

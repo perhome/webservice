@@ -1,0 +1,9 @@
+server {
+    server_name puhua.co;
+    access_log none;
+    error_log /home/webservice/logs/puhua-error.log;
+    root /home/webservice/sites/puhua.co/;
+    set $HTTPS_FLAG off;
+    include sites/common.conf;
+}
+
