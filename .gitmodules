@@ -1,3 +1,3 @@
 [submodule "applications/kohana"]
 	path = applications/kohana
-	url = git@github.com:perhome/kohana.perhome.cn.git
+	url = git@github.com:perhome/kohana.git

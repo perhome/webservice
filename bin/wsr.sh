@@ -19,7 +19,9 @@ while getopts ":hMmsntdpr:" opt
       ;;
    "s")
       echo "$SSDB_BIN -d ${WS_ROOT_PATH}/config/ssdb/main.conf"
+      echo "$SSDB_BIN -d ${WS_ROOT_PATH}/config/ssdb/cache.conf"
       su -c "$SSDB_BIN -d ${WS_ROOT_PATH}/config/ssdb/main.conf" $USER > /dev/null 2>&1 &
+      su -c "$SSDB_BIN -d ${WS_ROOT_PATH}/config/ssdb/cache.conf" $USER > /dev/null 2>&1 &
       ;;
    "d")
       echo "su -c \"$PG_BIN -D ${WS_ROOT_PATH}/data/postgres/ start\" $USER"
