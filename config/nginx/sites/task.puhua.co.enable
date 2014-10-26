@@ -1,0 +1,9 @@
+server {
+    root /home/webservice/sites/task.puhua.co;
+    server_name task.puhua.co;
+
+    access_log none;
+    error_log none;
+    set $HTTPS_FLAG off;
+    include sites/common.conf;
+}

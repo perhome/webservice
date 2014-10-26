@@ -1,0 +1,19 @@
+server {
+    server_name account.puhua.co;
+    rewrite ^(.*) https://account.puhua.co;
+}
+
+server {
+    listen               443;
+    server_name account.puhua.co;
+    access_log none;
+    error_log none;
+    root /home/webservice/sites/account.puhua.co/;
+    set $HTTPS_FLAG on;
+    ssl                  on;
+    ssl_certificate      /home/webservice/config/ssl/puhua.crt;
+    ssl_certificate_key  /home/webservice/config/ssl/puhua.key;
+    include sites/common.conf;
+
+}
+
